@@ -1,0 +1,10 @@
+/Debug
+/rza_gen
+/rza_cfg
+/rza
+/JLinkLog.log
+.settings
+build
+src/lvgl
+
+
