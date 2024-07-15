@@ -1,4 +1,4 @@
-#include <lvgl_thread.h>
+#include <LVGL_thread.h>
 #include "lvgl.h"
 #include "port/lv_port_disp.h"
 #include "port/lv_port_indev.h"
