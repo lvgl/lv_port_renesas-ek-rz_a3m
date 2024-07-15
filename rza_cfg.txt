@@ -590,7 +590,7 @@ FSP Configuration
     General: Max Priorities: 5
     General: Minimal Stack Size: 128
     General: Max Task Name Len: 16
-    Stats: Use Trace Facility: Disabled
+    Stats: Use Trace Facility: Enabled
     Stats: Use Stats Formatting Functions: Disabled
     General: Use 16-bit Ticks: Disabled
     General: Idle Should Yield: Enabled
@@ -663,8 +663,8 @@ FSP Configuration
     Instance "g_display0 Display Driver on r_lcdc"
       General: Name: g_display0
       Interrupts: Callback Function: lcdc_callback
-      Interrupts: Frame End Interrupt Priority: 12
-      Interrupts: Underrun Interrupt Priority: 12
+      Interrupts: Frame End Interrupt Priority: 18
+      Interrupts: Underrun Interrupt Priority: 18
       Input: Graphics Layer 1: General: Enabled: Yes
       Input: Graphics Layer 1: General: Horizontal size: 800
       Input: Graphics Layer 1: General: Vertical size: 1280
@@ -770,7 +770,7 @@ FSP Configuration
       General: Period Unit: Milliseconds
       General: Count Source: P0CLK
       Interrupts: Callback: timer_tick_callback
-      Interrupts: Underflow Interrupt Priority: 8
+      Interrupts: Underflow Interrupt Priority: 18
       Interrupts: Generate at Start: Disable
       Extra Features: GTM Mode: Interval timer mode
       

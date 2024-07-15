@@ -117,9 +117,9 @@
     <node id="board.clock.hpclk.display" option="board.clock.hpclk.display.value"/>
   </raClockConfiguration>
   <raComponentSelection>
-    <component apiversion="" class="Common" condition="" group="all" subgroup="config" variant="" vendor="Renesas" version="2.1.0+20240202.15de872c">
+    <component apiversion="" class="Common" condition="" group="all" subgroup="config" variant="" vendor="Renesas" version="3.0.1-rc.0+20240522.9abed214">
       <description>RZA Configuration Template File</description>
-      <originalPack>Renesas.RZA_config.2.1.0+20240202.15de872c.pack</originalPack>
+      <originalPack>Renesas.RZA_config.3.0.1-rc.0+20240522.9abed214.pack</originalPack>
     </component>
     <component apiversion="" class="Common" condition="" group="all" subgroup="fsp_common" variant="" vendor="Renesas" version="3.0.1-rc.0+20240617.519834e7">
       <description>Board Support Package Common Files</description>
@@ -213,8 +213,8 @@
     <module id="module.driver.display_on_lcdc.1313872285">
       <property id="module.driver.display.name" value="g_display0"/>
       <property id="module.driver.display.callback" value="lcdc_callback"/>
-      <property id="module.driver.display.frame_end_ipl" value="12"/>
-      <property id="module.driver.display.underrun_ipl" value="12"/>
+      <property id="module.driver.display.frame_end_ipl" value="18"/>
+      <property id="module.driver.display.underrun_ipl" value="18"/>
       <property id="module.driver.display.input0.enable" value="module.driver.display.input0.enable.true"/>
       <property id="module.driver.display.input0.hsize" value="800"/>
       <property id="module.driver.display.input0.vsize" value="1280"/>
@@ -320,7 +320,7 @@
       <property id="module.driver.timer.unit" value="module.driver.timer.unit.unit_period_msec"/>
       <property id="module.driver.timer.count_source" value="module.driver.timer.count_source.clock_p0clk"/>
       <property id="module.driver.timer.p_callback" value="timer_tick_callback"/>
-      <property id="module.driver.timer.ipl" value="8"/>
+      <property id="module.driver.timer.ipl" value="18"/>
       <property id="module.driver.timer.int.generateatstart" value="module.driver.timer.int.generateatstart.0"/>
       <property id="module.driver.timer.direction" value="module.driver.timer.direction.0"/>
     </module>
@@ -417,7 +417,7 @@
       <property id="config.awsfreertos.thread.configmax_priorities" value="5"/>
       <property id="config.awsfreertos.thread.configminimal_stack_size" value="128"/>
       <property id="config.awsfreertos.thread.configmax_task_name_len" value="16"/>
-      <property id="config.awsfreertos.thread.configuse_trace_facility" value="config.awsfreertos.thread.configuse_trace_facility.disabled"/>
+      <property id="config.awsfreertos.thread.configuse_trace_facility" value="config.awsfreertos.thread.configuse_trace_facility.enabled"/>
       <property id="config.awsfreertos.thread.configuse_stats_formatting_functions" value="config.awsfreertos.thread.configuse_stats_formatting_functions.disabled"/>
       <property id="config.awsfreertos.thread.configuse_16_bit_ticks" value="config.awsfreertos.thread.configuse_16_bit_ticks.disabled"/>
       <property id="config.awsfreertos.thread.configidle_should_yield" value="config.awsfreertos.thread.configidle_should_yield.enabled"/>
@@ -611,6 +611,7 @@
       <configSetting altId="p8_2.gpio_mode.gpio_mode_peripheral" configurationId="p8_2.gpio_mode"/>
       <configSetting altId="p8_3.i2c1.riic1_scl" configurationId="p8_3"/>
       <configSetting altId="p8_3.gpio_mode.gpio_mode_peripheral" configurationId="p8_3.gpio_mode"/>
+      <configSetting altId="poe.mode.custom.free" configurationId="poe.mode"/>
       <configSetting altId="scif0.mode.custom.free" configurationId="scif0.mode"/>
       <configSetting altId="scif0.scif0_rxd.p6_1" configurationId="scif0.scif0_rxd"/>
       <configSetting altId="scif0.scif0_txd.p6_0" configurationId="scif0.scif0_txd"/>

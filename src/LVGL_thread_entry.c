@@ -11,8 +11,11 @@ static uint32_t idle_time_sum;
 static uint32_t non_idle_time_sum;
 static uint32_t task_switch_timestamp;
 static bool idle_task_running;
+
 void vApplicationMallocFailedHook( void );
 uint32_t lv_os_get_idle_percent(void);
+
+extern fsp_vector_t g_vector_table[];
 
 void lv_freertos_task_switch_in(const char * name)
 {
@@ -104,7 +107,7 @@ void LVGL_thread_entry(void *pvParameters)
     /* TODO: add your own code here */
     while (1)
     {
-        lv_timer_handler();
-        vTaskDelay (1);
+        uint32_t time_till_next = lv_timer_handler();
+        vTaskDelay (pdMS_TO_TICKS(time_till_next));
     }
 }

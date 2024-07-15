@@ -29,7 +29,7 @@
 #include "hal_data.h"
 
 /*  #include "r_os_abstraction_api.h"  */
-#if (BSP_CFG_RTOS == 3)
+#if (BSP_CFG_RTOS == 2)
 #include "event_groups.h"
 #endif
 
@@ -48,7 +48,7 @@ int stdio_write(const uint8_t * pbyBuffer, uint32_t uiCount);
  Imported global variables and functions (from other files)
  ******************************************************************************/
 static uint32_t stdio_initialized = 0;
-#if (BSP_CFG_RTOS == 3)
+#if (BSP_CFG_RTOS == 2)
 static EventGroupHandle_t  printf_event;
 #else
 static volatile int wait_tx = 0;
@@ -68,7 +68,7 @@ int stdio_open(void)
     int ret = 0;
     if (stdio_initialized == 0)
     {
-#if (BSP_CFG_RTOS == 3)
+#if (BSP_CFG_RTOS == 2)
         printf_event = xEventGroupCreate();
 #endif
         scan_write = 0;
@@ -101,7 +101,7 @@ int stdio_read(uint8_t *pbyBuffer, uint32_t uiCount)
     {
         while(scan_write == scan_read)
         {
-#if (BSP_CFG_RTOS == 3)
+#if (BSP_CFG_RTOS == 2)
             vTaskDelay(1);
 #else
 #endif
@@ -130,7 +130,7 @@ int stdio_read(uint8_t *pbyBuffer, uint32_t uiCount)
     }
     while(scan_write == scan_read)
     {
-#if (BSP_CFG_RTOS == 3)
+#if (BSP_CFG_RTOS == 2)
         vTaskDelay(1);
 #else
 #endif
@@ -177,12 +177,12 @@ int stdio_write(const uint8_t * pbyBuffer, uint32_t uiCount)
     {
     	stdio_open();
     }
-#if (BSP_CFG_RTOS == 3)
+#if (BSP_CFG_RTOS == 2)
 #else
     wait_tx = 0;
 #endif
     ret = g_uart0.p_api->write(g_uart0.p_ctrl, pbyBuffer, uiCount);
-#if (BSP_CFG_RTOS == 3)
+#if (BSP_CFG_RTOS == 2)
     xEventGroupWaitBits(printf_event,1,pdTRUE,pdTRUE,portMAX_DELAY);
 #else
     while(wait_tx == 0);
@@ -200,7 +200,7 @@ void uart0_cb_stdio (uart_callback_args_t * p_args)
     {
         if(p_args->event & UART_EVENT_TX_COMPLETE)
         {
-#if (BSP_CFG_RTOS == 3)
+#if (BSP_CFG_RTOS == 2)
             BaseType_t xHigherPriorityTaskWoken, xResult;
 
             /* xHigherPriorityTaskWoken must be initialised to pdFALSE. */
