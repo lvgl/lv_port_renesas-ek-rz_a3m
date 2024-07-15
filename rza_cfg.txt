@@ -801,7 +801,7 @@ FSP Configuration
   Thread "LVGL Thread"
     Symbol: LVGL_thread
     Name: LVGL Thread
-    Stack size (bytes): 8192
+    Stack size (bytes): 32768
     Priority: 1
     Thread Context: NULL
     Memory Allocation: Dynamic

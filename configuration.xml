@@ -377,7 +377,7 @@
     <context id="rtos.awsfreertos.thread.0">
       <property id="_symbol" value="LVGL_thread"/>
       <property id="rtos.awsfreertos.thread.name" value="LVGL Thread"/>
-      <property id="rtos.awsfreertos.thread.stack" value="8192"/>
+      <property id="rtos.awsfreertos.thread.stack" value="32768"/>
       <property id="rtos.awsfreertos.thread.priority" value="1"/>
       <property id="rtos.awsfreertos.thread.context" value="NULL"/>
       <property id="rtos.awsfreertos.thread.allocation" value="rtos.awsfreertos.thread.allocation.dynamic"/>

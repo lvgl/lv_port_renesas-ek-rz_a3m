@@ -159,7 +159,7 @@ SECTIONS
 
     .stack (NOLOAD) : ALIGN( 0x10 ) {
         __stack_start = .;
-        . += 0x00002000;
+        . += 0x00004000;
         . = ALIGN( 0x10 );
         __stack_end = .;
 

@@ -38,6 +38,11 @@ static void disp_init(void);
 static void disp_flush(lv_display_t * disp, const lv_area_t * area, uint8_t * px_map);
 static void vsync_wait_cb(struct _lv_display_t * disp);
 
+
+static void * rotation_buffer = NULL;
+static uint32_t partial_buffer_size = 0;
+
+
 /**********************
  *  STATIC VARIABLES
  **********************/
@@ -70,10 +75,16 @@ void lv_port_disp_init(void)
     lv_display_set_flush_cb(disp, disp_flush);
     lv_display_set_flush_wait_cb(disp, vsync_wait_cb);
 #if (1)
-    lv_display_set_buffers(disp, p_fb_background_cached_0, p_fb_background_cached_1, sizeof(fb_background[0]), LV_DISPLAY_RENDER_MODE_DIRECT);
+    static lv_color_t partial_draw_buf[DISPLAY_HSIZE_INPUT0 * DISPLAY_VSIZE_INPUT0 / 10] BSP_PLACE_IN_SECTION(".bss2") BSP_ALIGN_VARIABLE(1024);
+
+    partial_buffer_size = sizeof(partial_draw_buf);
+    lv_display_set_buffers(disp, partial_draw_buf, NULL, sizeof(partial_draw_buf), LV_DISPLAY_RENDER_MODE_PARTIAL);
+//    lv_display_set_buffers(disp, p_fb_background_cached_0, p_fb_background_cached_1, sizeof(fb_background[0]), );
 #else
     lv_display_set_buffers(disp, &fb_background[0][0], &fb_background[1][0], sizeof(fb_background[0]), LV_DISPLAY_RENDER_MODE_DIRECT);
 #endif
+
+    lv_display_set_rotation(disp, LV_DISPLAY_ROTATION_90);
 }
 
 /**********************
@@ -215,21 +226,12 @@ void lcdc_callback(display_callback_args_t *p_args)
 
 static void vsync_wait_cb(lv_display_t * display)
 {
-    if(!lv_display_flush_is_last(display)) return;
+    LV_UNUSED(display);
 
-#if BSP_CFG_RTOS == 2              // FreeRTOS
-    //
-    // If Vsync semaphore has already been set, clear it then wait to avoid tearing
-    //
-    if (uxSemaphoreGetCount(_SemaphoreVsync))
-    {
-        xSemaphoreTake(_SemaphoreVsync, 10);
-    }
-
-    xSemaphoreTake(_SemaphoreVsync, portMAX_DELAY);
-#endif
 
 }
+
+#define BYTES_PER_PIXEL 2
 
 /*Flush the content of the internal buffer the specific area on the display.
  *`px_map` contains the rendered image as raw pixel map and it should be copied to `area` on the display.
@@ -237,17 +239,47 @@ static void vsync_wait_cb(lv_display_t * display)
  *'lv_display_flush_ready()' has to be called when it's finished.*/
 static void disp_flush(lv_display_t * display, const lv_area_t * area, uint8_t * px_map)
 {
+    uint16_t * img = (uint16_t *)px_map;
 
-    FSP_PARAMETER_NOT_USED(area);
-    //Display the framme buffer pointed by px_map
+    lv_color_format_t cf = lv_display_get_color_format(display);
+    lv_display_rotation_t rotation = lv_display_get_rotation(display);
 
-    if (!lv_display_flush_is_last(display))
-        return;
+    if(rotation != LV_DISPLAY_ROTATION_0) {
+        int32_t w = lv_area_get_width(area);
+        int32_t h = lv_area_get_height(area);
+        uint32_t w_stride = lv_draw_buf_width_to_stride(w, cf);
+        uint32_t h_stride = lv_draw_buf_width_to_stride(h, cf);
 
-#if (1)
-    R_BSP_CACHE_CleanRange((uint64_t)px_map, sizeof(fb_background[0]));
-#endif
-    R_LCDC_BufferChange(&g_display0_ctrl,
-                        (uint8_t *) px_map,
-                        (display_frame_layer_t) DISPLAY_FRAME_LAYER_1);
+        // only allocate if rotation is actually being used
+        if(!rotation_buffer) {
+            rotation_buffer = lv_malloc(partial_buffer_size);
+            LV_ASSERT_MALLOC(rotation_buffer);
+        }
+
+        if(rotation == LV_DISPLAY_ROTATION_180)
+            lv_draw_sw_rotate(img, rotation_buffer, w, h, w_stride, w_stride, rotation, cf);
+        else /* 90 or 270 */
+            lv_draw_sw_rotate(img, rotation_buffer, w, h, w_stride, h_stride, rotation, cf);
+
+        img = rotation_buffer;
+        lv_display_rotate_area(display, (lv_area_t *)area);
+    }
+
+    int32_t w = lv_area_get_width(area);
+    int32_t h = lv_area_get_height(area);
+
+    uint16_t * fb = (uint16_t *)fb_background[1];
+
+    fb = fb + area->y1 * DISPLAY_HSIZE_INPUT0;
+    fb = fb + area->x1;
+
+    int32_t i;
+    for(i = 0; i < h; i++) {
+        lv_memcpy(fb, img, w * BYTES_PER_PIXEL);
+
+        //R_BSP_CACHE_CleanRange(fb, w * BYTES_PER_PIXEL);
+
+        fb += DISPLAY_HSIZE_INPUT0;
+        img += w;
+    }
 }
