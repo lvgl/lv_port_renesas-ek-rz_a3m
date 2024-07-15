@@ -89,6 +89,7 @@ void lv_port_disp_init(void)
     lv_display_set_flush_wait_cb(disp, flush_wait_partial);
     lv_display_set_flush_cb(disp, flush_partial);
     lv_display_set_buffers(disp, p_fb_background_cached_0, p_fb_background_cached_1, sizeof(partial_draw_buf[0]), LV_DISPLAY_RENDER_MODE_PARTIAL);
+    lv_display_set_rotation(disp, LV_DISP_ROTATION_90);
 #endif
 }
 
