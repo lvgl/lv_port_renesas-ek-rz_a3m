@@ -1,4 +1,4 @@
-#include <lvgl_thread.h>
+#include <LVGL_thread.h>
 #include "lvgl.h"
 #include "port/lv_port_disp.h"
 #include "port/lv_port_indev.h"
@@ -13,11 +13,11 @@ static uint32_t task_switch_timestamp;
 static bool idle_task_running;
 
 void vApplicationMallocFailedHook( void );
-uint32_t lv_os_get_idle_percent(void);
+uint32_t lv_port_os_get_idle_percent(void);
 
 extern fsp_vector_t g_vector_table[];
 
-void lv_freertos_task_switch_in(const char * name)
+void lv_port_freertos_task_switch_in(const char * name)
 {
     if(strcmp(name, "IDLE")) idle_task_running = false;
     else idle_task_running = true;
@@ -25,14 +25,14 @@ void lv_freertos_task_switch_in(const char * name)
     task_switch_timestamp = lv_tick_get();
 }
 
-void lv_freertos_task_switch_out(void)
+void lv_port_freertos_task_switch_out(void)
 {
     uint32_t elaps = lv_tick_elaps(task_switch_timestamp);
     if(idle_task_running) idle_time_sum += elaps;
     else non_idle_time_sum += elaps;
 }
 
-uint32_t lv_os_get_idle_percent(void)
+uint32_t lv_port_os_get_idle_percent(void)
 {
     if(non_idle_time_sum + idle_time_sum == 0) {
         LV_LOG_WARN("Not enough time elapsed to provide idle percentage");
