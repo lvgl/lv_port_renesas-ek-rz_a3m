@@ -19,22 +19,20 @@
  **********************************************************************************************************************/
 
 #include <device/ili9881/ili9881.h>
-
-#include "hal_data.h"
-#include "r_mipi_dsi.h"
-
+#include <LVGL_thread.h>
+#include "r_mipi_dsi_b.h"
 
 /*****************************************************************************************************************
  *  @brief      Initialization of
  *  @param[in]  None
  *  @retval     None
  ****************************************************************************************************************/
-void ili9881_init( void )
+void ili9881_init(mipi_dsi_ctrl_t * const p_api_ctrl)
 {
-    ili9881_cmd_send(command_flow_ili9881);
+    ili9881_cmd_send(p_api_ctrl, command_flow_ili9881);
 }
 
-void ili9881_changepage(uint8_t page)
+void ili9881_changepage(mipi_dsi_ctrl_t * const p_api_ctrl, uint8_t page)
 {
     uint8_t send_data[4];
 
@@ -43,34 +41,63 @@ void ili9881_changepage(uint8_t page)
     send_data[2] = 0x81;
     send_data[3] = page;
 
-    mipi_dsi_longpacket_data_t long_packet_data =
+    mipi_dsi_cmd_t cmd =
     {
-     .virtual_channel = 0x00,
-     .data_type = 0x39,
-     .send_data_addr = send_data,
-     .word_count = 4,
+     .channel = 0,
+     .cmd_id = MIPI_DSI_CMD_ID_DCS_LONG_WRITE,
+     .flags = (mipi_dsi_cmd_flag_t) (MIPI_DSI_CMD_FLAG_LOW_POWER),
+     .tx_len = 4,
+     .p_tx_buffer = send_data,
     };
 
-    mipi_dsi_cmd_send_long((mipi_dsi_longpacket_data_t *)&long_packet_data);
+    R_MIPI_DSI_B_Command(p_api_ctrl, &cmd);
+    xSemaphoreTake( g_mipi_binary_semaphore, portMAX_DELAY );
 }
 
-void ili9881_cmd_send(command_type_t * command_flow)
+void ili9881_cmd_send(mipi_dsi_ctrl_t * const p_api_ctrl, command_type_t * command_flow)
 {
 
     uint32_t i = 0;
+
     while(command_flow[i].operation != 0xFF)
     {
         if(command_flow[i].operation == 0)
         {
-            ili9881_changepage(command_flow[i].data0);
+            ili9881_changepage(p_api_ctrl, command_flow[i].data0);
         }
         else if(command_flow[i].operation == 1)
         {
-            mipi_dsi_cmd_send_short(0x05, command_flow[i].data0, command_flow[i].data1);
+            uint8_t send_data[2];
+            send_data[0] = command_flow[i].data0;
+            send_data[1] = command_flow[i].data1;
+            mipi_dsi_cmd_t cmd =
+            {
+             .channel = 0,
+             .cmd_id = MIPI_DSI_CMD_ID_DCS_SHORT_WRITE_0_PARAM,
+             .flags = (mipi_dsi_cmd_flag_t) (MIPI_DSI_CMD_FLAG_LOW_POWER),
+             .tx_len = 2,
+             .p_tx_buffer = send_data,
+            };
+
+            R_MIPI_DSI_B_Command(p_api_ctrl, &cmd);
+            xSemaphoreTake( g_mipi_binary_semaphore, portMAX_DELAY );
         }
         else if(command_flow[i].operation == 2)
         {
-            mipi_dsi_cmd_send_short(0x15, command_flow[i].data0, command_flow[i].data1);
+            uint8_t send_data[2];
+            send_data[0] = command_flow[i].data0;
+            send_data[1] = command_flow[i].data1;
+            mipi_dsi_cmd_t cmd =
+            {
+             .channel = 0,
+             .cmd_id = MIPI_DSI_CMD_ID_DCS_SHORT_WRITE_1_PARAM,
+             .flags = (mipi_dsi_cmd_flag_t) (MIPI_DSI_CMD_FLAG_LOW_POWER),
+             .tx_len = 2,
+             .p_tx_buffer = send_data,
+            };
+
+            R_MIPI_DSI_B_Command(p_api_ctrl, &cmd);
+            xSemaphoreTake( g_mipi_binary_semaphore, portMAX_DELAY );
         }
         else if(command_flow[i].operation == 0x10)
         {
@@ -82,13 +109,4 @@ void ili9881_cmd_send(command_type_t * command_flow)
         }
         i++;
     }
-}
-
-void ili9881_cmd_reception(uint8_t data0, uint8_t data1)
-{
-    /*packet reception Step 1*/
-    mipi_dsi_cmd_send_short(0x37, 0x01, 0x00);
-
-    /*packet reception Step 2*/
-    mipi_dsi_cmd_reception(0x06, data0, data1);
 }

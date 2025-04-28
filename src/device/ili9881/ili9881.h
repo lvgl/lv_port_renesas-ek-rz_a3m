@@ -21,7 +21,7 @@
 #ifndef DEVICE_ILI9881_ILI9881_H_
 #define DEVICE_ILI9881_ILI9881_H_
 
-#include <r_mipi_dsi.h>
+#include <r_mipi_dsi_b.h>
 #include "bsp_api.h"
 
 #define COMMAND_SEND_DATA(_op, _data0, _data1)  \
@@ -46,9 +46,8 @@ typedef struct command_type
 
 extern command_type_t command_flow_ili9881[];
 
-void ili9881_init(void);
-void ili9881_changepage(uint8_t page);
-void ili9881_cmd_send(command_type_t * command_flow);
-void ili9881_cmd_reception(uint8_t data0, uint8_t data1);
+void ili9881_init(mipi_dsi_ctrl_t * const p_api_ctrl);
+void ili9881_changepage(mipi_dsi_ctrl_t * const p_api_ctrl, uint8_t page);
+void ili9881_cmd_send(mipi_dsi_ctrl_t * const p_api_ctrl, command_type_t * command_flow);
 
 #endif /* DEVICE_ILI9881_ILI9881_H_ */

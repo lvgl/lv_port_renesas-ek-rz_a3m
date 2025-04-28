@@ -69,33 +69,15 @@ void isl87671a_ctrl_func(timer_instance_t *p_mtu3, led_method_type method, uint3
     uint32_t status;
     i2c_master_instance_t *p_i2c;
 
-    //printf("[ISL97671A] method(%d) duty(%d).\r\n", method, duty);
-#if 0
-    if( p_i2c == NULL )
-    {
-        printf("[ISL97671A] parameter is invalid.\r\n");
-        return;
-    }
-#endif
-    /* event flag create */
-#if 0
-    status = tx_event_flags_create( &event_flag, (CHAR*)"bl event flag");
-    if (TX_SUCCESS != status)
-    {
-        printf("[ISL97671A] tx_event_flags_create is failed(%d).\r\n", status);
-        return;
-    }
-#endif
-
     // Get I2C instance
-//    p_i2c = i2c_get_ch1_func();
     p_i2c = &g_i2c_master1;
 
     // I2C Open
     _isl87671a_i2c_open(p_i2c);
 
     // Set LED method to register
-    if( _isl87671a_i2c_backlight_method_set(p_i2c, method) != FSP_SUCCESS )
+    status = _isl87671a_i2c_backlight_method_set(p_i2c, method);
+    if( status != FSP_SUCCESS )
     {
         printf("[ISL97671A] _isl87671a_i2c_backlight_method_set is failed(%d).\r\n", status);
         goto BL_END;
@@ -122,15 +104,6 @@ BL_END:
     // I2C Close
     _isl87671a_i2c_close(p_i2c);
 
-    /* event flag create */
-#if 0
-    status = tx_event_flags_delete( &event_flag);
-    if (TX_SUCCESS != status)
-    {
-        printf("[ISL97671A] tx_event_flags_delete is failed(%d).\r\n", status);
-    }
-#endif
-
     return;
 }
 
@@ -141,24 +114,6 @@ static void _isl87671a_callback( i2c_master_callback_args_t *p_arg )
 {
 	g_counter++;
 	g_i2c_event = p_arg->event;
-
-#if 0
-    switch(p_arg->event)
-    {
-    case I2C_MASTER_EVENT_ABORTED:
-        tx_event_flags_set(&event_flag, (ULONG)BL_EVENT_FLAG_I2C_ABRT, TX_OR );
-        break;
-    case I2C_MASTER_EVENT_RX_COMPLETE:
-        tx_event_flags_set(&event_flag, (ULONG)BL_EVENT_FLAG_I2C_RXCP, TX_OR );
-        break;
-    case I2C_MASTER_EVENT_TX_COMPLETE:
-        tx_event_flags_set(&event_flag, (ULONG)BL_EVENT_FLAG_I2C_TXCP, TX_OR );
-        break;
-    default:
-        tx_event_flags_set(&event_flag, (ULONG)BL_EVENT_FLAG_I2C_ERR, TX_OR );
-        break;
-    }
-#endif
 }
 
 static void _isl87671a_i2c_open(i2c_master_instance_t *p_i2c)
@@ -200,11 +155,6 @@ static void _isl87671a_i2c_close(i2c_master_instance_t *p_i2c)
 
 static uint32_t _isl87671a_i2c_wait_cb( i2c_master_event_t *p_event )
 {
-#if 0
-    uint32_t status;
-    ULONG statusbit;
-#endif
-
     while (!g_counter) {
     	;
     }
@@ -213,39 +163,6 @@ static uint32_t _isl87671a_i2c_wait_cb( i2c_master_event_t *p_event )
     g_counter = 0;
 
     return TX_SUCCESS;
-
-#if 0
-    status = tx_event_flags_get( &event_flag, BL_EVENT_FLAG_I2C_MASK, TX_OR_CLEAR, &statusbit, ISL97671A_I2C_WAIT );
-    if( TX_SUCCESS == status )
-    {
-        if( (statusbit & BL_EVENT_FLAG_I2C_ABRT) == BL_EVENT_FLAG_I2C_ABRT )
-        {
-            *p_event = I2C_MASTER_EVENT_ABORTED;
-        }
-        else if( (statusbit & BL_EVENT_FLAG_I2C_RXCP) == BL_EVENT_FLAG_I2C_RXCP )
-        {
-            *p_event = I2C_MASTER_EVENT_RX_COMPLETE;
-        }
-        else if( (statusbit & BL_EVENT_FLAG_I2C_TXCP) == BL_EVENT_FLAG_I2C_TXCP )
-        {
-            *p_event = I2C_MASTER_EVENT_TX_COMPLETE;
-        }
-        else if( (statusbit & BL_EVENT_FLAG_I2C_ERR) == BL_EVENT_FLAG_I2C_ERR )
-        {
-            status = TX_NOT_AVAILABLE;
-        }
-        else
-        {
-            status = TX_NOT_AVAILABLE;
-        }
-        return status;
-    }
-    else
-    {
-        printf("[ISL97671A] tx_event_flags_get failed(%X)\r\n", status);
-        return TX_WAIT_ERROR;
-    }
-#endif
 }
 
 static fsp_err_t _isl87671a_i2c_backlight_method_set(i2c_master_instance_t *p_i2c, led_method_type method)

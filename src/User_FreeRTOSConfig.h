@@ -1,7 +1,7 @@
 #ifndef USER_FREERTOSCONFIG_H_
 #define USER_FREERTOSCONFIG_H_
 
-#define configUSE_TRACE_FACILITY 1
+#define configASSERT(x)  assert(x)
 
 void lv_freertos_task_switch_in(const char * name);
 void lv_freertos_task_switch_out(void);
