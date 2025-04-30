@@ -26,7 +26,7 @@
     "logos": [
         "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/renesas/logo.svg"
     ],
-    "image": "https://raw.githubusercontent.com/lvgl/lv_port_renesas_ek-rz-a3m/master/board_images/board.webp",
+    "image": "https://raw.githubusercontent.com/lvgl/lv_port_renesas_ek-rz-a3m/master/board_images/image.webp",
     "buy_now_links": [],
     "branches": [
         "release/v9.2"
