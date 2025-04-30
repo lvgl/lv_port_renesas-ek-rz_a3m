@@ -17,6 +17,10 @@ via a board-to-board connector.
 
 ## Benchmark
 
+<a href="https://www.youtube.com/watch?v=IEjBGgrR_mk">
+    <img src="https://github.com/user-attachments/assets/10766145-1a92-4bec-a952-68ce376974fa" width="75%">
+</a>
+
 | Name                      | Avg. CPU | Avg. FPS | Avg. time | render time | flush time |
 | :------------------------ | -------: | -------: | --------: | ----------: | ---------: |
 | Empty screen              | 50%      | 30       | 23        | 1           | 22         |
