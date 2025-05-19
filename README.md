@@ -13,7 +13,7 @@ via a board-to-board connector.
 
 ## Buy
 
-(Coming soon.)
+The Renesas EK-RZ/A3M can be purchased from https://www.renesas.com/en/products/microcontrollers-microprocessors/rz-mpus/ek-rza3m-evaluation-kit-rza3m-mpu.
 
 ## Benchmark
 
