@@ -106,7 +106,7 @@ The Renesas EK-RZ/A3M can be purchased from https://www.renesas.com/en/products/
 ### Run the project
 - Clone the repository
   ```shell
-  git clone --recurse-submodules https://github.com/lvgl/lv_port_renesas_ek-rz-a3m.git
+  git clone --recurse-submodules https://github.com/lvgl/lv_port_renesas-ek-rz_a3m.git
   ```
 - Open e2 studio and go to **File > Open Projects from File System...**. Click "Directory"
   and navigate to the cloned project and then click "Finish".
