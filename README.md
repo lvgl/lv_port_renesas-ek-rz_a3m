@@ -97,8 +97,8 @@ The Renesas EK-RZ/A3M can be purchased from https://www.renesas.com/en/products/
     cd ~/.local/share/renesas/e2_studio
     unzip ~/Downloads/RZA_FSP_Packs_v3.4.0.zip
     ```
-    The directory structure of the ZIP structure may overlap with some of the structure
-    of the e2_studio install loction. This is expected. The `unzip` process will
+    The directory structure in the ZIP overlaps with the
+    e2_studio install loction. This is expected. The `unzip` process will
     update the directory structure with the new FSP files from the ZIP and preserve any existing FSP packs.
     [Refer to "2.2.3 Installation of FSP Packs using Package Zip file" in this guide](https://www.renesas.com/en/document/apn/rza-getting-started-flexible-software-package)
     for more details.
