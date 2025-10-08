@@ -89,10 +89,10 @@ The Renesas EK-RZ/A3M can be purchased from https://www.renesas.com/en/products/
 - Install FSP Packs. Please install FSP v3.4.0 for this project.
   It's okay if you have multiple versions installed.
   - On Windows, simply download RZA_FSP_Packs_v3.4.0.exe
-    [from here](https://github.com/renesas/rza-fsp/releases) under "Assets" for the desired release.
+    [from here](https://github.com/renesas/rza-fsp/releases) under "Assets".
     Run the installer and follow the prompts.
   - On Linux, download RZA_FSP_Packs_v3.4.0.zip
-    [from here](https://github.com/renesas/rza-fsp/releases/tag/v3.4.0) under "Assets" for the desired release.
+    [from here](https://github.com/renesas/rza-fsp/releases/tag/v3.4.0) under "Assets".
     Locate the e2 studio install location. If it is `~/.local/share/renesas/e2_studio`, unzip the file
     with the following commands:
     ```shell
