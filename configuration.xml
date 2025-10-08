@@ -9,7 +9,7 @@
     <option key="#DeviceCommand#" value="R9A07G066M04GBG"/>
     <option key="#RTOS#" value="rtos.awsfreertos"/>
     <option key="#pinconfiguration#" value="R9A07G066M04GBG.pincfg"/>
-    <option key="#FSPVersion#" value="3.4.0"/>
+    <option key="#FSPVersion#" value="3.5.0"/>
     <option key="#ConfigurationFragments#" value="Renesas##BSP##Board##rza3m_ref_nor##|Renesas##BSP##Board##rza3m_evk_nor##|Renesas##BSP##Board##rza3m_ek_nor##"/>
     <option key="#SELECTED_TOOLCHAIN#" value="gcc-arm-a-profile-aarch64"/>
     <option key="#ToolchainVersion#" value="13.2.1.20231009"/>
@@ -105,77 +105,77 @@
     <node id="board.clock.m1clk.display" option="board.clock.m3clk.display.value"/>
   </raClockConfiguration>
   <raComponentSelection>
-    <component apiversion="" class="BSP" condition="" group="rza3m" subgroup="device" variant="R9A07G066M04GBG" vendor="Renesas" version="3.4.0">
-      <description>Board support package for R9A07G066M04GBG</description>
-      <originalPack>Renesas.RZA_mcu_rza3m.3.4.0.pack</originalPack>
-    </component>
-    <component apiversion="" class="BSP" condition="" group="rza3m" subgroup="device" variant="" vendor="Renesas" version="3.4.0">
-      <description>Board support package for RZA3M</description>
-      <originalPack>Renesas.RZA_mcu_rza3m.3.4.0.pack</originalPack>
-    </component>
-    <component apiversion="" class="BSP" condition="" group="rza3m" subgroup="fsp" variant="" vendor="Renesas" version="3.4.0">
-      <description>Board support package for RZ/A3M (RZ/A3M) - FSP Data</description>
-      <originalPack>Renesas.RZA_mcu_rza3m.3.4.0.pack</originalPack>
-    </component>
-    <component apiversion="" class="RTOS" condition="" group="FreeRTOS" subgroup="all" variant="" vendor="AWS" version="10.6.1+fsp.3.4.0">
+    <component apiversion="" class="RTOS" condition="" group="FreeRTOS" subgroup="all" variant="" vendor="AWS" version="10.6.1+fsp.3.5.0">
       <description>FreeRTOS</description>
-      <originalPack>Amazon.FreeRTOS-Kernel.10.6.1+fsp.3.4.0.pack</originalPack>
+      <originalPack>Amazon.FreeRTOS-Kernel.10.6.1+fsp.3.5.0.pack</originalPack>
     </component>
-    <component apiversion="" class="Heaps" condition="" group="FreeRTOS" subgroup="heap_4" variant="" vendor="AWS" version="10.6.1+fsp.3.4.0">
+    <component apiversion="" class="Heaps" condition="" group="FreeRTOS" subgroup="heap_4" variant="" vendor="AWS" version="10.6.1+fsp.3.5.0">
       <description>FreeRTOS - Memory Management - Heap 4</description>
-      <originalPack>Amazon.FreeRTOS-Kernel.10.6.1+fsp.3.4.0.pack</originalPack>
+      <originalPack>Amazon.FreeRTOS-Kernel.10.6.1+fsp.3.5.0.pack</originalPack>
     </component>
-    <component apiversion="" class="BSP" condition="" group="Board" subgroup="rza3m_ek_nor" variant="" vendor="Renesas" version="3.4.0">
+    <component apiversion="" class="BSP" condition="" group="Board" subgroup="rza3m_ek_nor" variant="" vendor="Renesas" version="3.5.0">
       <description>RZ/A3M Evaluation Board NOR Boot (Exec with DDR SDRAM) Board Support Files</description>
-      <originalPack>Renesas.RZA_board_rza3m_ek_nor.3.4.0.pack</originalPack>
+      <originalPack>Renesas.RZA_board_rza3m_ek_nor.3.5.0.pack</originalPack>
     </component>
-    <component apiversion="" class="Common" condition="" group="all" subgroup="fsp_common" variant="" vendor="Renesas" version="3.4.0">
+    <component apiversion="" class="BSP" condition="" group="rza3m" subgroup="device" variant="R9A07G066M04GBG" vendor="Renesas" version="3.5.0">
+      <description>Board support package for R9A07G066M04GBG</description>
+      <originalPack>Renesas.RZA_mcu_rza3m.3.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="BSP" condition="" group="rza3m" subgroup="device" variant="" vendor="Renesas" version="3.5.0">
+      <description>Board support package for RZA3M</description>
+      <originalPack>Renesas.RZA_mcu_rza3m.3.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="BSP" condition="" group="rza3m" subgroup="fsp" variant="" vendor="Renesas" version="3.5.0">
+      <description>Board support package for RZ/A3M (RZ/A3M) - FSP Data</description>
+      <originalPack>Renesas.RZA_mcu_rza3m.3.5.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="Common" condition="" group="all" subgroup="fsp_common" variant="" vendor="Renesas" version="3.5.0">
       <description>Board Support Package Common Files</description>
-      <originalPack>Renesas.RZA.3.4.0.pack</originalPack>
+      <originalPack>Renesas.RZA.3.5.0.pack</originalPack>
     </component>
-    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_gtm" variant="" vendor="Renesas" version="3.4.0">
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_gtm" variant="" vendor="Renesas" version="3.5.0">
       <description>General Timer</description>
-      <originalPack>Renesas.RZA.3.4.0.pack</originalPack>
+      <originalPack>Renesas.RZA.3.5.0.pack</originalPack>
     </component>
-    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_intc_irq" variant="" vendor="Renesas" version="3.4.0">
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_intc_irq" variant="" vendor="Renesas" version="3.5.0">
       <description>External INT (IRQ)</description>
-      <originalPack>Renesas.RZA.3.4.0.pack</originalPack>
+      <originalPack>Renesas.RZA.3.5.0.pack</originalPack>
     </component>
-    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_ioport" variant="" vendor="Renesas" version="3.4.0">
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_ioport" variant="" vendor="Renesas" version="3.5.0">
       <description>I/O Port</description>
-      <originalPack>Renesas.RZA.3.4.0.pack</originalPack>
+      <originalPack>Renesas.RZA.3.5.0.pack</originalPack>
     </component>
-    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_lcdc" variant="" vendor="Renesas" version="3.4.0">
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_lcdc" variant="" vendor="Renesas" version="3.5.0">
       <description>LCD Controller</description>
-      <originalPack>Renesas.RZA.3.4.0.pack</originalPack>
+      <originalPack>Renesas.RZA.3.5.0.pack</originalPack>
     </component>
-    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_mipi_dsi_b" variant="" vendor="Renesas" version="3.4.0">
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_mipi_dsi_b" variant="" vendor="Renesas" version="3.5.0">
       <description>MIPI DSI</description>
-      <originalPack>Renesas.RZA.3.4.0.pack</originalPack>
+      <originalPack>Renesas.RZA.3.5.0.pack</originalPack>
     </component>
-    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_mipi_phy_b" variant="" vendor="Renesas" version="3.4.0">
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_mipi_phy_b" variant="" vendor="Renesas" version="3.5.0">
       <description>MIPI PHY Host</description>
-      <originalPack>Renesas.RZA.3.4.0.pack</originalPack>
+      <originalPack>Renesas.RZA.3.5.0.pack</originalPack>
     </component>
-    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_mmu" variant="" vendor="Renesas" version="3.4.0">
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_mmu" variant="" vendor="Renesas" version="3.5.0">
       <description>Memory Management Unit</description>
-      <originalPack>Renesas.RZA.3.4.0.pack</originalPack>
+      <originalPack>Renesas.RZA.3.5.0.pack</originalPack>
     </component>
-    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_riic_master" variant="" vendor="Renesas" version="3.4.0">
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_riic_master" variant="" vendor="Renesas" version="3.5.0">
       <description>I2C Master Interface</description>
-      <originalPack>Renesas.RZA.3.4.0.pack</originalPack>
+      <originalPack>Renesas.RZA.3.5.0.pack</originalPack>
     </component>
-    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_scif_uart" variant="" vendor="Renesas" version="3.4.0">
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_scif_uart" variant="" vendor="Renesas" version="3.5.0">
       <description>SCIF UART</description>
-      <originalPack>Renesas.RZA.3.4.0.pack</originalPack>
+      <originalPack>Renesas.RZA.3.5.0.pack</originalPack>
     </component>
-    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_ssi" variant="" vendor="Renesas" version="3.4.0">
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_ssi" variant="" vendor="Renesas" version="3.5.0">
       <description>Serial Sound Interface</description>
-      <originalPack>Renesas.RZA.3.4.0.pack</originalPack>
+      <originalPack>Renesas.RZA.3.5.0.pack</originalPack>
     </component>
-    <component apiversion="" class="Middleware" condition="" group="all" subgroup="rm_freertos_port" variant="" vendor="Renesas" version="3.4.0">
+    <component apiversion="" class="Middleware" condition="" group="all" subgroup="rm_freertos_port" variant="" vendor="Renesas" version="3.5.0">
       <description>FreeRTOS Port</description>
-      <originalPack>Renesas.RZA.3.4.0.pack</originalPack>
+      <originalPack>Renesas.RZA.3.5.0.pack</originalPack>
     </component>
   </raComponentSelection>
   <raElcConfiguration/>
@@ -425,28 +425,21 @@
       <property id="rtos.awsfreertos.thread.context" value="NULL"/>
       <property id="rtos.awsfreertos.thread.allocation" value="rtos.awsfreertos.thread.allocation.dynamic"/>
     </context>
-    <config id="config.driver.lcdc">
-      <property id="config.driver.lcdc.param_checking_enable" value="config.driver.lcdc.param_checking_enable.bsp"/>
-    </config>
-    <config id="config.driver.riic_master">
-      <property id="config.driver.riic_master.param_checking_enable" value="config.driver.riic_master.param_checking_enable.bsp"/>
-      <property id="config.driver.riic_master.dmac_enable" value="config.driver.riic_master.dmac_enable.disabled"/>
-      <property id="config.driver.riic_master.addr_mode_10_bit_enable" value="config.driver.riic_master.addr_mode_10_bit_enable.disabled"/>
-    </config>
-    <config id="config.driver.ioport">
-      <property id="config.driver.ioport.checking" value="config.driver.ioport.checking.system"/>
-    </config>
-    <config id="config.driver.ssi">
-      <property id="config.driver.ssi.param_checking_enable" value="config.driver.ssi.param_checking_enable.bsp"/>
-      <property id="config.driver.ssi.dmac_enable" value="config.driver.ssi.dmac_enable.disabled"/>
-    </config>
     <config id="config.driver.gtm">
       <property id="config.driver.gtm.param_checking_enable" value="config.driver.gtm.param_checking_enable.bsp"/>
+    </config>
+    <config id="config.driver.lcdc">
+      <property id="config.driver.lcdc.param_checking_enable" value="config.driver.lcdc.param_checking_enable.bsp"/>
     </config>
     <config id="config.driver.scif_uart">
       <property id="config.driver.scif_uart.param_checking_enable" value="config.driver.scif_uart.param_checking_enable.bsp"/>
       <property id="config.driver.scif_uart.dmac_enable" value="config.driver.scif_uart.dmac_enable.disabled"/>
       <property id="config.driver.scif_uart.flow_control" value="config.driver.scif_uart.flow_control.disabled"/>
+    </config>
+    <config id="config.driver.riic_master">
+      <property id="config.driver.riic_master.param_checking_enable" value="config.driver.riic_master.param_checking_enable.bsp"/>
+      <property id="config.driver.riic_master.dmac_enable" value="config.driver.riic_master.dmac_enable.disabled"/>
+      <property id="config.driver.riic_master.addr_mode_10_bit_enable" value="config.driver.riic_master.addr_mode_10_bit_enable.disabled"/>
     </config>
     <config id="config.driver.intc_irq">
       <property id="config.driver.intc_irq.param_checking_enable" value="config.driver.intc_irq.param_checking_enable.bsp"/>
@@ -521,6 +514,13 @@
     <config id="config.driver.mmu">
       <property id="config.driver.mmu.checking" value="config.driver.mmu.checking.system"/>
     </config>
+    <config id="config.driver.ioport">
+      <property id="config.driver.ioport.checking" value="config.driver.ioport.checking.system"/>
+    </config>
+    <config id="config.driver.ssi">
+      <property id="config.driver.ssi.param_checking_enable" value="config.driver.ssi.param_checking_enable.bsp"/>
+      <property id="config.driver.ssi.dmac_enable" value="config.driver.ssi.dmac_enable.disabled"/>
+    </config>
   </raModuleConfiguration>
   <raPinConfiguration>
     <pincfg active="true" name="RZA3M-REF-NOR.pincfg" selected="true" symbol="g_bsp_pin_cfg">
@@ -534,9 +534,6 @@
       <configSetting altId="dsi_data2_p.mipi.dsi_data2_p" configurationId="dsi_data2_p"/>
       <configSetting altId="dsi_data3_n.mipi.dsi_data3_n" configurationId="dsi_data3_n"/>
       <configSetting altId="dsi_data3_p.mipi.dsi_data3_p" configurationId="dsi_data3_p"/>
-      <configSetting altId="i2c1.mode.custom.free" configurationId="i2c1.mode"/>
-      <configSetting altId="i2c1.riic1_scl.p8_3" configurationId="i2c1.riic1_scl"/>
-      <configSetting altId="i2c1.riic1_sda.p8_2" configurationId="i2c1.riic1_sda"/>
       <configSetting altId="irq.irq1.p8_1" configurationId="irq.irq1"/>
       <configSetting altId="irq.mode.custom.free" configurationId="irq.mode"/>
       <configSetting altId="jtag_fslash_swd.mode.jtag.free" configurationId="jtag_fslash_swd.mode"/>
@@ -578,30 +575,58 @@
       <configSetting altId="p21_1.gpio_mode.gpio_mode_peripheral" configurationId="p21_1.gpio_mode"/>
       <configSetting altId="p21_2.jtag_fslash_swd.trst_n" configurationId="p21_2"/>
       <configSetting altId="p21_2.gpio_mode.gpio_mode_peripheral" configurationId="p21_2.gpio_mode"/>
-      <configSetting altId="p22_0.sd_fslash_mmc.sd0_cmd" configurationId="p22_0"/>
+      <configSetting altId="p22_0.sd0.sd0_cmd" configurationId="p22_0"/>
       <configSetting altId="p22_0.gpio_mode.gpio_mode_peripheral" configurationId="p22_0.gpio_mode"/>
-      <configSetting altId="p22_1.sd_fslash_mmc.sd0_data0" configurationId="p22_1"/>
+      <configSetting altId="p22_1.sd0.sd0_data0" configurationId="p22_1"/>
       <configSetting altId="p22_1.gpio_mode.gpio_mode_peripheral" configurationId="p22_1.gpio_mode"/>
-      <configSetting altId="p22_2.sd_fslash_mmc.sd0_data1" configurationId="p22_2"/>
+      <configSetting altId="p22_2.sd0.sd0_data1" configurationId="p22_2"/>
       <configSetting altId="p22_2.gpio_mode.gpio_mode_peripheral" configurationId="p22_2.gpio_mode"/>
-      <configSetting altId="p22_3.sd_fslash_mmc.sd0_data2" configurationId="p22_3"/>
+      <configSetting altId="p22_3.sd0.sd0_data2" configurationId="p22_3"/>
       <configSetting altId="p22_3.gpio_mode.gpio_mode_peripheral" configurationId="p22_3.gpio_mode"/>
-      <configSetting altId="p22_4.sd_fslash_mmc.sd0_data3" configurationId="p22_4"/>
+      <configSetting altId="p22_4.sd0.sd0_data3" configurationId="p22_4"/>
       <configSetting altId="p22_4.gpio_mode.gpio_mode_peripheral" configurationId="p22_4.gpio_mode"/>
-      <configSetting altId="p23_0.spim.qspi0_io2" configurationId="p23_0"/>
+      <configSetting altId="p23_0.spibsc.qspi0_io2" configurationId="p23_0"/>
+      <configSetting altId="p23_0.gpio_speed.gpio_speed_ultrahigh" configurationId="p23_0.gpio_drivecapacity"/>
       <configSetting altId="p23_0.gpio_mode.gpio_mode_peripheral" configurationId="p23_0.gpio_mode"/>
-      <configSetting altId="p23_1.spim.qspi0_io3" configurationId="p23_1"/>
+      <configSetting altId="p23_1.spibsc.qspi0_io3" configurationId="p23_1"/>
+      <configSetting altId="p23_1.gpio_speed.gpio_speed_ultrahigh" configurationId="p23_1.gpio_drivecapacity"/>
       <configSetting altId="p23_1.gpio_mode.gpio_mode_peripheral" configurationId="p23_1.gpio_mode"/>
       <configSetting altId="p8_1.irq.irq1" configurationId="p8_1"/>
       <configSetting altId="p8_1.gpio_mode.gpio_mode_peripheral" configurationId="p8_1.gpio_mode"/>
-      <configSetting altId="p8_2.i2c1.riic1_sda" configurationId="p8_2"/>
+      <configSetting altId="p8_2.riic1.riic1_sda" configurationId="p8_2"/>
       <configSetting altId="p8_2.gpio_mode.gpio_mode_peripheral" configurationId="p8_2.gpio_mode"/>
-      <configSetting altId="p8_3.i2c1.riic1_scl" configurationId="p8_3"/>
+      <configSetting altId="p8_2.sr.sr.slow" configurationId="p8_2.sr"/>
+      <configSetting altId="p8_3.riic1.riic1_scl" configurationId="p8_3"/>
       <configSetting altId="p8_3.gpio_mode.gpio_mode_peripheral" configurationId="p8_3.gpio_mode"/>
+      <configSetting altId="p8_3.sr.sr.slow" configurationId="p8_3.sr"/>
       <configSetting altId="poe.mode.custom.free" configurationId="poe.mode"/>
+      <configSetting altId="qspi0_io0.spibsc.qspi0_io0" configurationId="qspi0_io0"/>
+      <configSetting altId="qspi0_io0.other_speed.other_speed_ultrahigh" configurationId="qspi0_io0.other_drivecapacity"/>
+      <configSetting altId="qspi0_io1.spibsc.qspi0_io1" configurationId="qspi0_io1"/>
+      <configSetting altId="qspi0_io1.other_speed.other_speed_ultrahigh" configurationId="qspi0_io1.other_drivecapacity"/>
+      <configSetting altId="qspi0_spclk.spibsc.qspi0_spclk" configurationId="qspi0_spclk"/>
+      <configSetting altId="qspi0_spclk.other_speed.other_speed_ultrahigh" configurationId="qspi0_spclk.other_drivecapacity"/>
+      <configSetting altId="qspi0_ssl.spibsc.qspi0_ssl" configurationId="qspi0_ssl"/>
+      <configSetting altId="qspi0_ssl.other_speed.other_speed_ultrahigh" configurationId="qspi0_ssl.other_drivecapacity"/>
+      <configSetting altId="riic1.mode.custom.free" configurationId="riic1.mode"/>
+      <configSetting altId="riic1.riic1_scl.p8_3" configurationId="riic1.riic1_scl"/>
+      <configSetting altId="riic1.riic1_sda.p8_2" configurationId="riic1.riic1_sda"/>
       <configSetting altId="scif1.mode.custom.free" configurationId="scif1.mode"/>
       <configSetting altId="scif1.scif1_rxd.p1_1" configurationId="scif1.scif1_rxd"/>
       <configSetting altId="scif1.scif1_txd.p1_0" configurationId="scif1.scif1_txd"/>
+      <configSetting altId="sd0.mode.custom.free" configurationId="sd0.mode"/>
+      <configSetting altId="sd0.sd0_cmd.p22_0" configurationId="sd0.sd0_cmd"/>
+      <configSetting altId="sd0.sd0_data0.p22_1" configurationId="sd0.sd0_data0"/>
+      <configSetting altId="sd0.sd0_data1.p22_2" configurationId="sd0.sd0_data1"/>
+      <configSetting altId="sd0.sd0_data2.p22_3" configurationId="sd0.sd0_data2"/>
+      <configSetting altId="sd0.sd0_data3.p22_4" configurationId="sd0.sd0_data3"/>
+      <configSetting altId="spibsc.mode.quadspi.free" configurationId="spibsc.mode"/>
+      <configSetting altId="spibsc.qspi0_io0.qspi0_io0" configurationId="spibsc.qspi0_io0"/>
+      <configSetting altId="spibsc.qspi0_io1.qspi0_io1" configurationId="spibsc.qspi0_io1"/>
+      <configSetting altId="spibsc.qspi0_io2.p23_0" configurationId="spibsc.qspi0_io2"/>
+      <configSetting altId="spibsc.qspi0_io3.p23_1" configurationId="spibsc.qspi0_io3"/>
+      <configSetting altId="spibsc.qspi0_spclk.qspi0_spclk" configurationId="spibsc.qspi0_spclk"/>
+      <configSetting altId="spibsc.qspi0_ssl.qspi0_ssl" configurationId="spibsc.qspi0_ssl"/>
       <configSetting altId="tck_swdclk.jtag_fslash_swd.tck_swdclk" configurationId="tck_swdclk"/>
       <configSetting altId="tms_swdio.jtag_fslash_swd.tms_swdio" configurationId="tms_swdio"/>
       <configSetting altId="tms_swdio.other_inen.inen.enable" configurationId="tms_swdio.other_inen"/>
@@ -625,20 +650,6 @@
       <configSetting altId="p21_1.gpio_mode.gpio_mode_peripheral" configurationId="p21_1.gpio_mode"/>
       <configSetting altId="p21_2.jtag_fslash_swd.trst_n" configurationId="p21_2"/>
       <configSetting altId="p21_2.gpio_mode.gpio_mode_peripheral" configurationId="p21_2.gpio_mode"/>
-      <configSetting altId="p22_0.sd_fslash_mmc.sd0_cmd" configurationId="p22_0"/>
-      <configSetting altId="p22_0.gpio_mode.gpio_mode_peripheral" configurationId="p22_0.gpio_mode"/>
-      <configSetting altId="p22_1.sd_fslash_mmc.sd0_data0" configurationId="p22_1"/>
-      <configSetting altId="p22_1.gpio_mode.gpio_mode_peripheral" configurationId="p22_1.gpio_mode"/>
-      <configSetting altId="p22_2.sd_fslash_mmc.sd0_data1" configurationId="p22_2"/>
-      <configSetting altId="p22_2.gpio_mode.gpio_mode_peripheral" configurationId="p22_2.gpio_mode"/>
-      <configSetting altId="p22_3.sd_fslash_mmc.sd0_data2" configurationId="p22_3"/>
-      <configSetting altId="p22_3.gpio_mode.gpio_mode_peripheral" configurationId="p22_3.gpio_mode"/>
-      <configSetting altId="p22_4.sd_fslash_mmc.sd0_data3" configurationId="p22_4"/>
-      <configSetting altId="p22_4.gpio_mode.gpio_mode_peripheral" configurationId="p22_4.gpio_mode"/>
-      <configSetting altId="p23_0.spim.qspi0_io2" configurationId="p23_0"/>
-      <configSetting altId="p23_0.gpio_mode.gpio_mode_peripheral" configurationId="p23_0.gpio_mode"/>
-      <configSetting altId="p23_1.spim.qspi0_io3" configurationId="p23_1"/>
-      <configSetting altId="p23_1.gpio_mode.gpio_mode_peripheral" configurationId="p23_1.gpio_mode"/>
     </pincfg>
     <pincfg active="false" name="RZA3M-EVK-NOR.pincfg" selected="false" symbol="">
       <configSetting altId="jtag_fslash_swd.mode.jtag.free" configurationId="jtag_fslash_swd.mode"/>
@@ -670,42 +681,11 @@
       <configSetting altId="p21_1.gpio_mode.gpio_mode_peripheral" configurationId="p21_1.gpio_mode"/>
       <configSetting altId="p21_2.jtag_fslash_swd.trst_n" configurationId="p21_2"/>
       <configSetting altId="p21_2.gpio_mode.gpio_mode_peripheral" configurationId="p21_2.gpio_mode"/>
-      <configSetting altId="p22_0.sd_fslash_mmc.sd0_cmd" configurationId="p22_0"/>
-      <configSetting altId="p22_0.gpio_mode.gpio_mode_peripheral" configurationId="p22_0.gpio_mode"/>
-      <configSetting altId="p22_1.sd_fslash_mmc.sd0_data0" configurationId="p22_1"/>
-      <configSetting altId="p22_1.gpio_mode.gpio_mode_peripheral" configurationId="p22_1.gpio_mode"/>
-      <configSetting altId="p22_2.sd_fslash_mmc.sd0_data1" configurationId="p22_2"/>
-      <configSetting altId="p22_2.gpio_mode.gpio_mode_peripheral" configurationId="p22_2.gpio_mode"/>
-      <configSetting altId="p22_3.sd_fslash_mmc.sd0_data2" configurationId="p22_3"/>
-      <configSetting altId="p22_3.gpio_mode.gpio_mode_peripheral" configurationId="p22_3.gpio_mode"/>
-      <configSetting altId="p22_4.sd_fslash_mmc.sd0_data3" configurationId="p22_4"/>
-      <configSetting altId="p22_4.gpio_mode.gpio_mode_peripheral" configurationId="p22_4.gpio_mode"/>
-      <configSetting altId="p23_0.spim.qspi0_io2" configurationId="p23_0"/>
-      <configSetting altId="p23_0.gpio_mode.gpio_mode_peripheral" configurationId="p23_0.gpio_mode"/>
-      <configSetting altId="p23_1.spim.qspi0_io3" configurationId="p23_1"/>
-      <configSetting altId="p23_1.gpio_mode.gpio_mode_peripheral" configurationId="p23_1.gpio_mode"/>
-      <configSetting altId="qspi0_io0.spim.qspi0_io0" configurationId="qspi0_io0"/>
-      <configSetting altId="qspi0_io1.spim.qspi0_io1" configurationId="qspi0_io1"/>
-      <configSetting altId="qspi0_spclk.spim.qspi0_spclk" configurationId="qspi0_spclk"/>
-      <configSetting altId="qspi0_ssl.spim.qspi0_ssl" configurationId="qspi0_ssl"/>
       <configSetting altId="rst_boot.md_boot0.p20_0" configurationId="rst_boot.md_boot0"/>
       <configSetting altId="rst_boot.md_boot1.p20_1" configurationId="rst_boot.md_boot1"/>
       <configSetting altId="rst_boot.md_boot2.p20_2" configurationId="rst_boot.md_boot2"/>
       <configSetting altId="rst_boot.md_oscdrv1.p20_5" configurationId="rst_boot.md_oscdrv1"/>
       <configSetting altId="rst_boot.mode.custom.free" configurationId="rst_boot.mode"/>
-      <configSetting altId="sd_fslash_mmc.mode.custom.free" configurationId="sd_fslash_mmc.mode"/>
-      <configSetting altId="sd_fslash_mmc.sd0_cmd.p22_0" configurationId="sd_fslash_mmc.sd0_cmd"/>
-      <configSetting altId="sd_fslash_mmc.sd0_data0.p22_1" configurationId="sd_fslash_mmc.sd0_data0"/>
-      <configSetting altId="sd_fslash_mmc.sd0_data1.p22_2" configurationId="sd_fslash_mmc.sd0_data1"/>
-      <configSetting altId="sd_fslash_mmc.sd0_data2.p22_3" configurationId="sd_fslash_mmc.sd0_data2"/>
-      <configSetting altId="sd_fslash_mmc.sd0_data3.p22_4" configurationId="sd_fslash_mmc.sd0_data3"/>
-      <configSetting altId="spim.mode.quadspi.free" configurationId="spim.mode"/>
-      <configSetting altId="spim.qspi0_io0.qspi0_io0" configurationId="spim.qspi0_io0"/>
-      <configSetting altId="spim.qspi0_io1.qspi0_io1" configurationId="spim.qspi0_io1"/>
-      <configSetting altId="spim.qspi0_io2.p23_0" configurationId="spim.qspi0_io2"/>
-      <configSetting altId="spim.qspi0_io3.p23_1" configurationId="spim.qspi0_io3"/>
-      <configSetting altId="spim.qspi0_spclk.qspi0_spclk" configurationId="spim.qspi0_spclk"/>
-      <configSetting altId="spim.qspi0_ssl.qspi0_ssl" configurationId="spim.qspi0_ssl"/>
       <configSetting altId="tck_swdclk.jtag_fslash_swd.tck_swdclk" configurationId="tck_swdclk"/>
       <configSetting altId="tms_swdio.jtag_fslash_swd.tms_swdio" configurationId="tms_swdio"/>
       <configSetting altId="tms_swdio.other_inen.inen.enable" configurationId="tms_swdio.other_inen"/>
@@ -740,47 +720,11 @@
       <configSetting altId="p21_1.gpio_mode.gpio_mode_peripheral" configurationId="p21_1.gpio_mode"/>
       <configSetting altId="p21_2.jtag_fslash_swd.trst_n" configurationId="p21_2"/>
       <configSetting altId="p21_2.gpio_mode.gpio_mode_peripheral" configurationId="p21_2.gpio_mode"/>
-      <configSetting altId="p22_0.sd_fslash_mmc.sd0_cmd" configurationId="p22_0"/>
-      <configSetting altId="p22_0.gpio_inen.inen.enable" configurationId="p22_0.gpio_inen"/>
-      <configSetting altId="p22_0.gpio_mode.gpio_mode_peripheral" configurationId="p22_0.gpio_mode"/>
-      <configSetting altId="p22_1.sd_fslash_mmc.sd0_data0" configurationId="p22_1"/>
-      <configSetting altId="p22_1.gpio_inen.inen.enable" configurationId="p22_1.gpio_inen"/>
-      <configSetting altId="p22_1.gpio_mode.gpio_mode_peripheral" configurationId="p22_1.gpio_mode"/>
-      <configSetting altId="p22_2.sd_fslash_mmc.sd0_data1" configurationId="p22_2"/>
-      <configSetting altId="p22_2.gpio_inen.inen.enable" configurationId="p22_2.gpio_inen"/>
-      <configSetting altId="p22_2.gpio_mode.gpio_mode_peripheral" configurationId="p22_2.gpio_mode"/>
-      <configSetting altId="p22_3.sd_fslash_mmc.sd0_data2" configurationId="p22_3"/>
-      <configSetting altId="p22_3.gpio_inen.inen.enable" configurationId="p22_3.gpio_inen"/>
-      <configSetting altId="p22_3.gpio_mode.gpio_mode_peripheral" configurationId="p22_3.gpio_mode"/>
-      <configSetting altId="p22_4.sd_fslash_mmc.sd0_data3" configurationId="p22_4"/>
-      <configSetting altId="p22_4.gpio_inen.inen.enable" configurationId="p22_4.gpio_inen"/>
-      <configSetting altId="p22_4.gpio_mode.gpio_mode_peripheral" configurationId="p22_4.gpio_mode"/>
-      <configSetting altId="p23_0.spim.qspi0_io2" configurationId="p23_0"/>
-      <configSetting altId="p23_0.gpio_mode.gpio_mode_peripheral" configurationId="p23_0.gpio_mode"/>
-      <configSetting altId="p23_1.spim.qspi0_io3" configurationId="p23_1"/>
-      <configSetting altId="p23_1.gpio_mode.gpio_mode_peripheral" configurationId="p23_1.gpio_mode"/>
-      <configSetting altId="qspi0_io0.spim.qspi0_io0" configurationId="qspi0_io0"/>
-      <configSetting altId="qspi0_io1.spim.qspi0_io1" configurationId="qspi0_io1"/>
-      <configSetting altId="qspi0_spclk.spim.qspi0_spclk" configurationId="qspi0_spclk"/>
-      <configSetting altId="qspi0_ssl.spim.qspi0_ssl" configurationId="qspi0_ssl"/>
       <configSetting altId="rst_boot.md_boot0.p20_0" configurationId="rst_boot.md_boot0"/>
       <configSetting altId="rst_boot.md_boot1.p20_1" configurationId="rst_boot.md_boot1"/>
       <configSetting altId="rst_boot.md_boot2.p20_2" configurationId="rst_boot.md_boot2"/>
       <configSetting altId="rst_boot.md_oscdrv1.p20_5" configurationId="rst_boot.md_oscdrv1"/>
       <configSetting altId="rst_boot.mode.custom.free" configurationId="rst_boot.mode"/>
-      <configSetting altId="sd_fslash_mmc.mode.custom.free" configurationId="sd_fslash_mmc.mode"/>
-      <configSetting altId="sd_fslash_mmc.sd0_cmd.p22_0" configurationId="sd_fslash_mmc.sd0_cmd"/>
-      <configSetting altId="sd_fslash_mmc.sd0_data0.p22_1" configurationId="sd_fslash_mmc.sd0_data0"/>
-      <configSetting altId="sd_fslash_mmc.sd0_data1.p22_2" configurationId="sd_fslash_mmc.sd0_data1"/>
-      <configSetting altId="sd_fslash_mmc.sd0_data2.p22_3" configurationId="sd_fslash_mmc.sd0_data2"/>
-      <configSetting altId="sd_fslash_mmc.sd0_data3.p22_4" configurationId="sd_fslash_mmc.sd0_data3"/>
-      <configSetting altId="spim.mode.quadspi.free" configurationId="spim.mode"/>
-      <configSetting altId="spim.qspi0_io0.qspi0_io0" configurationId="spim.qspi0_io0"/>
-      <configSetting altId="spim.qspi0_io1.qspi0_io1" configurationId="spim.qspi0_io1"/>
-      <configSetting altId="spim.qspi0_io2.p23_0" configurationId="spim.qspi0_io2"/>
-      <configSetting altId="spim.qspi0_io3.p23_1" configurationId="spim.qspi0_io3"/>
-      <configSetting altId="spim.qspi0_spclk.qspi0_spclk" configurationId="spim.qspi0_spclk"/>
-      <configSetting altId="spim.qspi0_ssl.qspi0_ssl" configurationId="spim.qspi0_ssl"/>
       <configSetting altId="tck_swdclk.jtag_fslash_swd.tck_swdclk" configurationId="tck_swdclk"/>
       <configSetting altId="tms_swdio.jtag_fslash_swd.tms_swdio" configurationId="tms_swdio"/>
       <configSetting altId="tms_swdio.other_inen.inen.enable" configurationId="tms_swdio.other_inen"/>

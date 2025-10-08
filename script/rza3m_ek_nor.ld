@@ -166,7 +166,9 @@ SECTIONS
 
     .stack (NOLOAD) : ALIGN( 0x10 ) {
         __stack_start = .;
-        . += 0x00002000;
+        /* Main stack */
+        KEEP(*(.stack))
+        __StackTop = .;
         . = ALIGN( 0x10 );
         __stack_end = .;
 
@@ -185,7 +187,8 @@ SECTIONS
     .heap (NOLOAD) : ALIGN( 0x10 ) {
         end = .;
         __HeapBase = .;
-        . = . + 0x00002000;
+        /* Place the STD heap here. */
+        KEEP(*(.heap))
         __HeapLimit = .;
         /* heap end */
 
