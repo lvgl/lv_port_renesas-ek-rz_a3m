@@ -19,8 +19,8 @@
             #else
 #define BSP_TZ_SECURE_BUILD                  (0)
 #define BSP_TZ_NONSECURE_BUILD               (0)
-#define BSP_CFG_MSTP_CHANGE_DELAY_ENABLE     (1)
-#define BSP_CFG_CLOCK_SETTLING_DELAY_US      (150)
+#define BSP_CFG_MSTP_CHANGE_DELAY_ENABLE     (0)
+#define BSP_CFG_CLOCK_SETTLING_DELAY_US      (0)
 #endif
 
 /* TrustZone Settings */

@@ -12,10 +12,10 @@
 
 /******************************************************************************************************************//**
  * @ingroup BOARDS
- * @defgroup BOARD_RZA3M_EK_NOR BSP for the RZA3M Reference board
+ * @defgroup BOARD_RZA3M_EK_NOR BSP for EK-RZ/A3M
  * @brief BSP for the RZA3M-REF-NOR Board
  *
- * The RZA3M_EVK is a reference board for the Renesas R9A07G066M04GBG microcontroller in a LBGA244 package.
+ * The RZA3M_EVK is a reference board for the Renesas R9A07G066M04GBG microcontroller in a LFBGA244 package.
  *
  * @{
  *********************************************************************************************************************/

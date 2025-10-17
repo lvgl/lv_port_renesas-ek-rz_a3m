@@ -86,18 +86,18 @@ The Renesas EK-RZ/A3M can be purchased from https://www.renesas.com/en/products/
     are included in your selection of "Customize Features".
   - Ensure "GCC ToolChains & Utilities" is selected and "GCC ARM A-Profile (AArch64 bare-metal) 13.2 rel1"
     under that tab is also selected in "Additional Software".
-- Install FSP Packs. Please install FSP v3.4.0 for this project.
+- Install FSP Packs. Please install FSP v3.6.0 for this project.
   It's okay if you have multiple versions installed.
-  - On Windows, simply download RZA_FSP_Packs_v3.4.0.exe
-    [from here](https://github.com/renesas/rza-fsp/releases/tag/v3.4.0) under "Assets".
+  - On Windows, simply download RZA_FSP_Packs_v3.6.0.exe
+    [from here](https://github.com/renesas/rza-fsp/releases/tag/v3.6.0) under "Assets".
     Run the installer and follow the prompts.
-  - On Linux, download RZA_FSP_Packs_v3.4.0.zip
-    [from here](https://github.com/renesas/rza-fsp/releases/tag/v3.4.0) under "Assets".
+  - On Linux, download RZA_FSP_Packs_v3.6.0.zip
+    [from here](https://github.com/renesas/rza-fsp/releases/tag/v3.6.0) under "Assets".
     Locate the e2 studio install location. If it is `~/.local/share/renesas/e2_studio`, unzip the file
     with the following commands:
     ```shell
     cd ~/.local/share/renesas/e2_studio
-    unzip ~/Downloads/RZA_FSP_Packs_v3.4.0.zip
+    unzip ~/Downloads/RZA_FSP_Packs_v3.6.0.zip
     ```
     The directory structure in the ZIP overlaps with the
     e2_studio install loction. This is expected. The `unzip` process will

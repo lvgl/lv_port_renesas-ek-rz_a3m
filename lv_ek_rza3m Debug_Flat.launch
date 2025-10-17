@@ -26,7 +26,7 @@
     <booleanAttribute key="com.renesas.cdt.core.startServer" value="true"/>
     <stringAttribute key="com.renesas.cdt.core.targetDevice" value="R9A07G066M04GBG"/>
     <booleanAttribute key="com.renesas.cdt.core.useRemoteTarget" value="true"/>
-    <stringAttribute key="com.renesas.cdt.debug.ioview.dsf.registerSelection0" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;selectedRegisterList ioFilePath=&quot;/home/liam/.eclipse/com.renesas.platform_1966269521/DebugComp/RZ/IoFiles/R9A07G066M.sfrx&quot;/&gt;&#10;"/>
+    <stringAttribute key="com.renesas.cdt.debug.ioview.dsf.registerSelection0" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;selectedRegisterList ioFilePath=&quot;/home/liam/.eclipse/com.renesas.platform_1966269521/DebugComp/RZ/IoFiles/R9A07G066M.svd&quot;/&gt;&#10;"/>
     <stringAttribute key="com.renesas.cdt.launch.dsf.IO_MAP" value="${support_area_loc}../../../.."/>
     <booleanAttribute key="com.renesas.cdt.launch.dsf.USE_DEFAULT_IO_MAP" value="true"/>
     <listAttribute key="com.renesas.cdt.launch.dsf.downloadImages">
@@ -142,6 +142,6 @@
         <listEntry value="4"/>
     </listAttribute>
     <booleanAttribute key="org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND" value="false"/>
-    <stringAttribute key="org.eclipse.dsf.launch.MEMORY_BLOCKS" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&lt;memoryBlockExpressionList context=&quot;reserved-for-future-use&quot;&gt;&lt;gdbmemoryBlockExpression address=&quot;1076909056&quot; core_thread_id=&quot;1_i1&quot; label=&quot;fb_background&quot;/&gt;&lt;gdbmemoryBlockExpression address=&quot;1078752256&quot; core_thread_id=&quot;1_i1&quot; label=&quot;&amp;amp;fb_background[1]&quot;/&gt;&lt;/memoryBlockExpressionList&gt;"/>
+    <stringAttribute key="org.eclipse.dsf.launch.MEMORY_BLOCKS" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&lt;memoryBlockExpressionList context=&quot;reserved-for-future-use&quot;&gt;&lt;gdbmemoryBlockExpression address=&quot;1076909568&quot; core_thread_id=&quot;1_i1&quot; label=&quot;fb_background&quot;/&gt;&lt;gdbmemoryBlockExpression address=&quot;1078752768&quot; core_thread_id=&quot;1_i1&quot; label=&quot;&amp;amp;fb_background[1]&quot;/&gt;&lt;/memoryBlockExpressionList&gt;"/>
     <stringAttribute key="process_factory_id" value="org.eclipse.cdt.dsf.gdb.GdbProcessFactory"/>
 </launchConfiguration>
